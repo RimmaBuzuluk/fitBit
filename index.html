@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				overflow: hidden; /* Позбавлення скролу */
+				background-color: #132529;
+			}
+			.main {
+				height: 100%;
+				/* background-color: lightblue; */
+				/* color: white; */
+				/* text-align: center; */
+				/* display: flex; 
+				align-items: center; 
+				justify-content: center; */
+			}
+			.mainImg {
+				display: flex;
+				justify-content: end;
+				height: 100%;
+			}
+			.mainImg img {
+				height: 100%;
+				filter: blur(20px); /* 20px - радіус розмиття */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="mainImg"><img src="./img/backgroundPhoto.png" /></div>
+		</div>
+	</body>
+</html>
