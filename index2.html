@@ -47,23 +47,26 @@
 			</main>
 		</div>
 		<script>
-			// Отримати всі зображення
 			const images = document.querySelectorAll('.loadingImg img');
 			let currentIndex = 0;
-
-			// Функція для зміни зображень
+			let elapsedTime = 0;
 
 			function changeImage() {
-				// Сховати всі зображення
 				images.forEach(image => (image.style.display = 'none'));
-				// Показати поточне зображення
 				images[currentIndex].style.display = 'block';
-				// Збільшити індекс або повернутися до першого зображення, якщо досягнуто кінця
 				currentIndex = (currentIndex + 1) % images.length;
+
+				elapsedTime += 250; // Збільшуємо час виконання на 250 мілісекунд кожен раз
+				if (elapsedTime >= 10000) {
+					// Якщо пройшло 10 секунд
+					clearInterval(intervalIdLoading); // Зупиняємо виконання setInterval
+					setTimeout(function () {
+						window.location.href = 'index3.html'; // Переходимо на сторінку index.html3
+					}, 0); // Виконуємо перехід з мінімальним затримкою
+				}
 			}
 
-			// Викликати функцію changeImage() кожну секунду
-			setInterval(changeImage, 250);
+			const intervalIdLoading = setInterval(changeImage, 250);
 		</script>
 		<script>
 			const items = document.querySelectorAll('.loading_mainTitle, .loading .loading_menuInf .loading_menuInf_item, .loading .loadingImg, .loading .loaden_text');
