@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./style1.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<div class="logoImgs">
+					<img class="logoImg" src="/img/logo.png" />
+					<img class="brandNameImg" src="./img/brandname.png" />
+				</div>
+				<div class="icon_menu">
+					<img src="./img/icon_location.png" />
+					<img src="./img/icon_user.png" />
+					<img src="./img/icon_basket.png" />
+				</div>
+			</header>
+			<main class="loading">
+				<div class="loading_mainTitle">Ihre Antworten werden überprüft</div>
+				<div class="loading_menuInf">
+					<div>Sie haben 3/3 der Fragen beantwortet!</div>
+					<div>Es gibt keine vorläufigen Erhebungen über Ihr IP</div>
+					<div>Geschenke werden geladen.</div>
+				</div>
+				<div class="loadingImg">
+					<img src="./img/image 3.png" />
+					<img src="./img/image 1.png" />
+					<img src="./img/image 2.png" />
+					<img src="./img/Frame.png" />
+				</div>
+				<div class="loaden_text">Laden...</div>
+			</main>
+		</div>
+		<script>
+			// Отримати всі зображення
+			const images = document.querySelectorAll('.loadingImg img');
+			let currentIndex = 0;
+
+			// Функція для зміни зображень
+			function changeImage() {
+				// Сховати всі зображення
+				images.forEach(image => (image.style.display = 'none'));
+				// Показати поточне зображення
+				images[currentIndex].style.display = 'block';
+				// Збільшити індекс або повернутися до першого зображення, якщо досягнуто кінця
+				currentIndex = (currentIndex + 1) % images.length;
+			}
+
+			// Викликати функцію changeImage() кожну секунду
+			setInterval(changeImage, 250);
+		</script>
+	</body>
+</html>
