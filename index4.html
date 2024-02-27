@@ -4,8 +4,42 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" />
 	</head>
 	<body>
-		4page
+		<div class="wrapper">
+			<header>
+				<div class="logoImgs">
+					<img class="logoImg" src="/img/logo.png" />
+					<img class="brandNameImg" src="./img/brandname.png" />
+				</div>
+				<div class="icon_menu">
+					<img src="./img/icon_location.png" />
+					<img src="./img/icon_user.png" />
+					<img src="./img/icon_basket.png" />
+				</div>
+			</header>
+			<main>
+				<table>
+					<tbody></tbody>
+				</table>
+			</main>
+
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script>
+				$(document).ready(function () {
+					let tableBody = $('main table tbody');
+					for (let i = 0; i < 12; i++) {
+						// Додаємо рядок <tr> кожній 4-й комірці
+						if (i % 4 === 0) {
+							tableBody.append('<tr></tr>');
+						}
+						// Додаємо комірку <td> з <div> та зображенням
+						tableBody.find('tr:last-child').append('<td><div><img src="./img/box2.png" /></div></td>');
+					}
+				});
+			</script>
+		</div>
 	</body>
 </html>
