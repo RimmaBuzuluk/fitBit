@@ -5,10 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./style4.css" />
+		<!-- <link rel="stylesheet" href="./style3.css" /> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" />
 	</head>
 	<body>
 		<div class="wrapper">
+			<div class="backgroundPage">
+				<!-- <img class="backgroundImg" src="./img/Rectangle 2867.png" /> -->
+			</div>
+
 			<header>
 				<div class="logoImgs">
 					<img class="logoImg" src="/img/logo.png" />
@@ -20,26 +26,45 @@
 					<img src="./img/icon_basket.png" />
 				</div>
 			</header>
+
 			<main>
 				<table>
 					<tbody></tbody>
 				</table>
 			</main>
-
-			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-			<script>
-				$(document).ready(function () {
-					let tableBody = $('main table tbody');
-					for (let i = 0; i < 12; i++) {
-						// Додаємо рядок <tr> кожній 4-й комірці
-						if (i % 4 === 0) {
-							tableBody.append('<tr></tr>');
-						}
-						// Додаємо комірку <td> з <div> та зображенням
-						tableBody.find('tr:last-child').append('<td><div><img src="./img/box2.png" /></div></td>');
-					}
-				});
-			</script>
 		</div>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				let tableBody = $('main table tbody');
+				for (let i = 0; i < 12; i++) {
+					if (i % 4 === 0) {
+						tableBody.append('<tr></tr>');
+					}
+					tableBody.find('tr:last-child').append(`<td id='boxItem_${i}'><div onclick="openBox(${i})"><img src="./img/box2.png" /></div></td>`);
+				}
+			});
+
+			function openBox(i) {
+				console.log(i);
+				const itemDiv = document.getElementById(`boxItem_${i}`).querySelector('div');
+				const tdElement = itemDiv.parentNode;
+
+				console.log(itemDiv);
+				console.log(tdElement);
+
+				const openBoxDiv = document.createElement('div');
+				openBoxDiv.innerHTML = `
+                    <img class="openBoxBow" src="./img/box-03 1.png" />
+                    <img class="headerBox" src="./img/box-02 1.png" />
+                    <img class="mainBox" src="./img/1 923.png" />
+                `;
+				console.log(openBoxDiv);
+
+				// Замінити елемент itemDiv на openBoxDiv
+				tdElement.replaceChild(openBoxDiv, itemDiv);
+			}
+		</script>
 	</body>
 </html>
