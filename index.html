@@ -4,38 +4,52 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<style>
-			html,
-			body {
-				height: 100%;
-				margin: 0;
-				padding: 0;
-				overflow: hidden; /* Позбавлення скролу */
-				background-color: #132529;
-			}
-			.main {
-				height: 100%;
-				/* background-color: lightblue; */
-				/* color: white; */
-				/* text-align: center; */
-				/* display: flex; 
-				align-items: center; 
-				justify-content: center; */
-			}
-			.mainImg {
-				display: flex;
-				justify-content: end;
-				height: 100%;
-			}
-			.mainImg img {
-				height: 100%;
-				filter: blur(20px); /* 20px - радіус розмиття */
-			}
-		</style>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" />
 	</head>
 	<body>
-		<div class="main">
-			<div class="mainImg"><img src="./img/backgroundPhoto.png" /></div>
+		<div class="wrapper">
+			<header>
+				<div class="logoImgs">
+					<img class="logoImg" src="/img/logo.png" />
+					<img class="brandNameImg" src="./img/brandname.png" />
+				</div>
+				<div class="icon_menu">
+					<img src="./img/icon_location.png" />
+					<img src="./img/icon_user.png" />
+					<img src="./img/icon_basket.png" />
+				</div>
+			</header>
+			<main>
+				<div class="mainInform">
+					<div>
+						<div class="mainInform_text">
+							<div class="mainInform_itle">Congratulations!</div>
+							<div class="mainInform_textB">You may take part in the Maxi-Cosi promotion!</div>
+							<div class="mainInform_textL" style="z-index: 20">Celebrate Mother's Day with Maxi-Cosi! The company announces the sale of 300 units of Pebble 360 baby car seats for only 2 euros!</div>
+						</div>
+					</div>
+					<div class="mainInform_img">
+						<img src="./img/1 (1).png" />
+						<img src="./img/2 (1).png" />
+						<img src="./img/3.png" />
+						<img src="./img/4 (1).png" />
+					</div>
+				</div>
+				<div class="orderBlock">In order to get a promotional Maxi-Cosi Pebble 360, please complete the survey for confirming that you are a real person. Please hurry up, because the number of items on offer is limited!</div>
+			</main>
+			<footer>
+				<div class="questionBlocK">
+					<div class="questionBlock_text">
+						<div class="questionBlock_textNumber">Question 1 of 3.</div>
+						<div class="questionBlock_textQuestion">Have you ever used a Maxi-Cosi products?</div>
+					</div>
+					<div class="questionBlock_button">
+						<button>YES</button>
+						<button>NO</button>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

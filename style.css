@@ -1,0 +1,90 @@
+html,
+/* body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* Позбавлення скролу */
+    
+	/* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #132529 10%);
+	color: aliceblue;
+	z-index: -5;
+}  */
+
+body {
+	margin: 0;
+	padding: 0;
+	position: relative; /* Для псевдоелемента */
+	height: 100vh; /* 100% висота екрану */
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('./img/backgroundPhoto.png') right top no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0), #132529 10%);
+	background-size: auto 100%, auto; /* Розмір картинки та градієнту */
+	filter: blur(20px);
+	z-index: -1; /* Піднести псевдоелемент під зміст сторінки */
+}
+
+body {
+	color: #f4f4f4;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/* .mainImg {
+	position: absolute;
+	display: flex;
+	justify-content: end;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+.img {
+	height: auto;
+	filter: blur(20px);
+	position: relative;
+	object-fit: contain;
+	object-position: left center;
+} */
+.wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 18px 0 0 0;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 18px;
+}
+
+.logoImg {
+	height: 80px;
+	width: 80px;
+	z-index: 20;
+}
+.brandNameImg {
+	height: 84px;
+	width: 170px;
+	margin-left: 40px;
+}
+
+.mainInform {
+	display: flex;
+}
+
+.icon_menu {
+	padding-top: 18px;
+}
+.icon_menu img {
+	margin-left: 28px;
+	z-index: 10;
+}
+.mainInform_textL {
+	z-index: 20;
+}
